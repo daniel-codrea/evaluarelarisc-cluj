@@ -103,18 +103,35 @@ section {
 	height: 60%;
 	max-height: 60%;
 	overflow: hidden;
+	position: relative;
+	.carousel-inner {
+		position: static;
+	}
+	.carousel-caption {
+		font-size: 20px;
+		text-align: left;
+		background: rgba(0, 0, 0, 0.45);
+		border-radius: 4px;
+		padding: 20px;
+	}
 	.item {
-		position: relative;
-		height: 100%;
-		width: 100%;
-		overflow: hidden;
-		img {
-			position: relative;
-			top: 50%;
-			left: 50%;
-			transform: translateX(-50%) translateY(-50%);
-			min-width: 100%;
-		}
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+	}
+	#slide_1 {
+		background: url(../images/slide_1.jpg) no-repeat center center;
+		background-size: cover;
+	}
+	#slide_2 {
+		background: url(../images/slide_2.jpg) no-repeat center center;
+		background-size: cover;
+	}
+	#slide_3 {
+		background: url(../images/slide_3.jpg) no-repeat center center;
+		background-size: cover;
 	}
 }
 

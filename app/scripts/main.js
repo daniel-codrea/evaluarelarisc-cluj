@@ -23,7 +23,14 @@ $(function() {
 });
 
 $('#home-carousel').carousel({
-  interval:   4000
+  interval:   12000
+});
+$('.carousel-control.left').click(function() {
+  $('#home-carousel').carousel('prev');
+});
+
+$('.carousel-control.right').click(function() {
+  $('#home-carousel').carousel('next');
 });
 
 $('.navbar-brand').click(function(){
