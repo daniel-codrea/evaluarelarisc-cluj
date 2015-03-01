@@ -20,6 +20,10 @@ html, body {
   text-align: left;
 }
 
+body { 
+	padding-top: 60px; 
+}
+
 ::-moz-selection {
   text-shadow: none;
   background: #ccc;
@@ -47,6 +51,7 @@ a, a:hover, a:focus {
 	background-color: $green;
 	border-color: $green-hover;
 	padding-top: 10px;
+	margin-bottom: 0;
 	.navbar-brand {
 		padding: 5px 15px;
 		img {
@@ -74,10 +79,52 @@ a, a:hover, a:focus {
 			color: $hardGreen-hover;
 		}
 	}
+	.navbar-nav > .active > a {
+		color: #fff;
+		background-color: $hardGreen;
+		border-radius: 4px 4px 0 0;
+		&:hover, &:focus {
+			color: #fff;
+			background-color: $hardGreen;
+		}
+	}
 }
+
+section {
+  height: auto;
+  min-height: 100%;
+}
+
+/* Home section */
+#home {
+	height: 100%;
+}
+#home-carousel {
+	height: 60%;
+	max-height: 60%;
+	overflow: hidden;
+	.item {
+		position: relative;
+		height: 100%;
+		width: 100%;
+		overflow: hidden;
+		img {
+			position: relative;
+			top: 50%;
+			left: 50%;
+			transform: translateX(-50%) translateY(-50%);
+			min-width: 100%;
+		}
+	}
+}
+
+
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
+	body { 
+		padding-top: 80px; 
+	}
 	/* Navigation */
 	.navbar-default {
 		padding-top: 30px;
