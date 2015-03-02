@@ -49,6 +49,7 @@ a, a:hover, a:focus {
 /* Navigation */
 .navbar-default {
 	background-color: $green;
+  background-image: $noise;
 	border-color: $green-hover;
 	padding-top: 10px;
 	margin-bottom: 0;
@@ -96,11 +97,9 @@ section {
 }
 
 /* Home section */
-#home {
-	height: 100%;
-}
 #home-carousel {
 	height: 60%;
+  min-height: 344px;
 	max-height: 60%;
 	overflow: hidden;
 	position: relative;
@@ -108,11 +107,14 @@ section {
 		position: static;
 	}
 	.carousel-caption {
-		font-size: 20px;
+		font-size: 12px;
 		text-align: left;
 		background: rgba(0, 0, 0, 0.45);
 		border-radius: 4px;
-		padding: 20px;
+		padding: 10px;
+    left: 12%;
+    right: 12%;
+    bottom: 10px;
 	}
 	.item {
 		position: absolute;
@@ -135,6 +137,12 @@ section {
 	}
 }
 
+/* Legislatie section */
+#legislatie {
+  padding: 20px 0 50px;
+  background-color: #ccc;
+  background-image: $noise;
+}
 
 
 /* Responsive: Portrait tablets and up */
@@ -152,5 +160,29 @@ section {
 			}
 		}
 	}
+  #home-carousel {
+    .carousel-caption {
+      font-size: 16px;
+      padding: 20px;
+      left: 15%;
+      right: 15%;
+      bottom: 20px;
+    }
+  }
 }
 
+@media screen and (min-width: 984px) {
+  #home-carousel {
+    .carousel-caption {
+      font-size: 18px;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #home-carousel {
+    .carousel-caption {
+      font-size: 20px;
+    }
+  }
+}
