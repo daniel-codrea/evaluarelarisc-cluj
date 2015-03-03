@@ -76,6 +76,7 @@ a, a:hover, a:focus {
 	}
 	.navbar-nav > li > a {
 		color: $hardGreen;
+    font-weight: 700;
 		&:hover, &:focus {
 			color: $hardGreen-hover;
 		}
@@ -99,6 +100,17 @@ section {
 /* Home section */
 #home {
 	box-shadow: inset 0 -10px 10px -10px #333;
+  .panel-default {
+    border-color: $green;
+  }
+  .panel-heading {
+    background-color: $green;
+    border-color: $green-hover;
+  }
+  .panel-title {
+    color: #fff;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.6);
+  }
 }
 #home-carousel {
 	height: 344px;
