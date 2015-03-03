@@ -41,3 +41,10 @@ $('.navbar-brand').click(function(){
 $('.navbar-collapse li a').click(function(){
 	$('.navbar-collapse').removeClass('in');
 });
+
+$('#legislatie .thumbnail').each(function(){
+  $(this).click(function() {
+    window.location = $(this).find('a').attr('href');
+    return false;
+  });
+});

@@ -154,6 +154,7 @@ section {
 		text-shadow: 0 1px 1px rgba(0, 0, 0, 0.95);
 	}
 	.thumbnail {
+    transition: all .5s ease;
 		.caption {
 			padding: 15px;
 		}
@@ -163,6 +164,27 @@ section {
 		a {
 			color: #030303;
 		}
+    &:hover, &:focus {
+      background-color: rgba(172, 187, 113, 0.6);
+      position: relative;
+      a {
+        color: rgba(172, 187, 113, 0.4);
+      }
+      &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: 'vezi document';
+        color: #fff;
+        text-align: center;
+        padding: 50px 0 0;
+        font-size: 28px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+    }
 	}
 }
 
@@ -179,14 +201,41 @@ section {
 #parteneri {
 	padding: 40px 0;
 	min-height: 0;
+  box-shadow: 0 10px 10px -10px #333;
+  position: relative;
+  z-index: 100;
+  .thumbnail {
+    position: relative;
+    height: 150px;
+    overflow: hidden;
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      max-height: 140px;
+    }
+  }
 }
 
 /* Contact section */
 #contact {
-	padding: 40px 0;
+  position: relative;
+  z-index: 50;
+	padding: 0 0 40px;
 	min-height: 0;
+  background-color: #ccc;
+  background-image: $noise;
+  box-shadow: inset 0 -10px 10px -10px #333;
+  iframe {
+    width: 100%;
+    box-shadow: 0 10px 10px -10px #333;
+  }
 }
 
+.footer {
+  padding: 20px 0 10px;
+}
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
@@ -233,6 +282,19 @@ section {
 			font-size: 28px;
 		}
 	}
+  #servicii {
+    h2 {
+      font-size: 36px;
+    }
+    p, li {
+      font-size: 22px;
+    }
+  }
+  #parteneri {
+    h2 {
+      font-size: 36px;
+    }
+  }
 }
 
 @media screen and (min-width: 1200px) {
