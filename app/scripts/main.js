@@ -42,3 +42,56 @@ $('#legislatie .thumbnail').each(function(){
     return false;
   });
 });
+
+// validate contact form
+$(function() {
+    $('#contactForm').validate({
+        rules: {
+            name: {
+                required: true,
+                minlength: 2
+            },
+            email: {
+                required: true,
+                email: true
+            },
+            message: {
+                required: true,
+								minlength: 4
+            }
+        },
+        messages: {
+            name: {
+                required: 'Va rugam sa va precizati numele complet.',
+                minlength: 'Numele dumneavoastra trebuie sa contina cel putin 2 caractere.'
+            },
+            email: {
+                required: 'Va rugam sa folositi o adresa de email valida.'
+            },
+            message: {
+                required: 'Va rugam sa transmiteti un mesaj.',
+                minlength: 'Mesajul dumneavoastra trebuie sa contina cel putin 4 caractere'
+            }
+        },
+        submitHandler: function(form) {
+            $(form).ajaxSubmit({
+                type:'POST',
+                data: $(form).serialize(),
+                url:'../send_mail.php',
+                success: function() {
+                    $('#contactForm :input').attr('disabled', 'disabled');
+                    $('#contactForm').fadeTo( 'slow', 0.15, function() {
+                        $(this).find(':input').attr('disabled', 'disabled');
+                        $(this).find('label').css('cursor','default');
+                        $('#success').fadeIn();
+                    });
+                },
+                error: function() {
+                    $('#contactForm').fadeTo( 'slow', 0.15, function() {
+                        $('#error').fadeIn();
+                    });
+                }
+            });
+        }
+    });
+});

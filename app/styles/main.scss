@@ -46,6 +46,10 @@ a, a:hover, a:focus {
   color: $green;
 }
 
+.red {
+	color: $red;
+}
+
 /* Navigation */
 .navbar-default {
 	background-color: $green;
@@ -133,6 +137,7 @@ section {
     height: 344px;
     img{
       object-fit: cover;
+			min-height: 100%;
     }
   }
 }
@@ -192,6 +197,10 @@ section {
 	min-height: 0;
 	padding: 40px 0;
 	box-shadow: inset 0 10px 10px -10px #333, inset 0 -10px 10px -10px #333;
+	p {
+		text-indent: 20px;
+		margin: 20px 0;
+	}
 }
 
 /* Parteneri section */
@@ -238,6 +247,42 @@ section {
     z-index: 55;
     background: url(../images/transparent.gif) repeat top left;
   }
+	form {
+		label.error {
+			margin-bottom:10px;
+			font-size:12px;
+			line-height:12px;
+			color:#c0392b;
+		}
+		input[type="text"], input[type="email"], textarea {
+			&:focus {
+				border-color:#191919;
+				box-shadow:none;
+			}
+			&:disabled {
+				background:#fff
+			}
+			&.error {
+				background:#e6e6e6;
+				border-color:#c0392b
+			}
+		}
+	}
+	#success, #error {
+		display: none;
+    span {
+			display:block;
+			p {
+    		margin-top:20px
+			}
+		}
+	}
+	#success span p {
+  	color: $hardGreen;
+	}
+	#error span p {
+  	color: $red;
+	}
 }
 
 .footer {
