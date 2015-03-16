@@ -147,6 +147,15 @@ section {
 	min-height: 0;
   padding: 40px 0;
   background: url(../images/legislatie.jpg) no-repeat bottom right;
+  position: relative;
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../images/overlay.png);
+  }
 	.row {
 		background: rgba(0, 0, 0, 0.65);
 		border-radius: 4px;
@@ -155,6 +164,14 @@ section {
 		color: #fff;
 		text-shadow: 0 1px 1px rgba(0, 0, 0, 0.95);
 	}
+  .pLR-20 {
+    padding: 0 20px;
+    color: #fff;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.95);
+    ul {
+      list-style: decimal;
+    }
+  }
 	.thumbnail {
     transition: all .5s ease;
 		.caption {
